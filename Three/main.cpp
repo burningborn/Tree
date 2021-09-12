@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 using namespace std;
 #include <string>
@@ -50,15 +50,15 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	// 1. Дерево
-	// 2. Узел дерева 
+	// 1. Р”РµСЂРµРІРѕ
+	// 2. РЈР·РµР» РґРµСЂРµРІР° 
 
 	BinaryTree tree = feelTree();
-	tree.display(); // дерево после заполнения
+	tree.display(); // РґРµСЂРµРІРѕ РїРѕСЃР»Рµ Р·Р°РїРѕР»РЅРµРЅРёСЏ
 	//cout << delimiter << endl;
 	cout << tree.findIdWithValue(62) << endl;
-	cout << "Минимальное  значение бинарного дерева: " << tree.findMin() << endl;
-	cout << "Максимальное значение бинарного дерева: " << tree.findMax() << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ  Р·РЅР°С‡РµРЅРёРµ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°: " << tree.findMin() << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°: " << tree.findMax() << endl;
 	cout << delimiter << endl;
 	const int n = 77;
 	int arr2[n]{};
@@ -67,11 +67,11 @@ int main()
 	cout << delimiter << endl;
 	tree.addArr(n, arr2);
 	cout << endl;
-	tree.display(); // дерево после заполнения
+	tree.display(); // РґРµСЂРµРІРѕ РїРѕСЃР»Рµ Р·Р°РїРѕР»РЅРµРЅРёСЏ
 	cout << endl;
 	cout << delimiter << endl;
-	cout << "Минимальное  значение бинарного дерева: " << tree.findMin() << endl;
-	cout << "Максимальное значение бинарного дерева: " << tree.findMax() << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ  Р·РЅР°С‡РµРЅРёРµ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°: " << tree.findMin() << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°: " << tree.findMax() << endl;
 
 	return 0;
 }

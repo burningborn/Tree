@@ -1,4 +1,4 @@
-#include "BinaryTree.h"
+п»ї#include "BinaryTree.h"
 
 BinaryTree::Node::Node(int id, int value, Node* left, Node* right)
 {
@@ -10,13 +10,13 @@ BinaryTree::Node::Node(int id, int value, Node* left, Node* right)
 
 void BinaryTree::Node::addNode(int id, int value)
 {
-	if (value >= this->value) {//то добавляем узел вправо
+	if (value >= this->value) {//С‚Рѕ РґРѕР±Р°РІР»СЏРµРј СѓР·РµР» РІРїСЂР°РІРѕ
 		if (right == nullptr)
 			right = new Node(id, value);
 		else
 			right->addNode(id, value);
 	}
-	else {//добавляем узел влево
+	else {//РґРѕР±Р°РІР»СЏРµРј СѓР·РµР» РІР»РµРІРѕ
 		if (left == nullptr)
 			left = new Node(id, value);
 		else
@@ -24,14 +24,14 @@ void BinaryTree::Node::addNode(int id, int value)
 	}
 }
 
-// поиск идентификатора узла с заданными значением	
+// РїРѕРёСЃРє РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂР° СѓР·Р»Р° СЃ Р·Р°РґР°РЅРЅС‹РјРё Р·РЅР°С‡РµРЅРёРµРј	
 	int BinaryTree::Node::findIdWithValue(int value)
 {
-	//шаг 1 <=> К <=> корень
+	//С€Р°Рі 1 <=> Рљ <=> РєРѕСЂРµРЅСЊ
 	if (this->value == value)
 		return id;
 
-	//шаг 2 <=> Л <=> левое (посмотреть левое поддерево)
+	//С€Р°Рі 2 <=> Р› <=> Р»РµРІРѕРµ (РїРѕСЃРјРѕС‚СЂРµС‚СЊ Р»РµРІРѕРµ РїРѕРґРґРµСЂРµРІРѕ)
 	int next_id;
 	if (left != nullptr) {
 		next_id = left->findIdWithValue(value);
@@ -41,7 +41,7 @@ void BinaryTree::Node::addNode(int id, int value)
 	else
 		next_id = -1;
 
-	// шаг 3 <=> П <=> правое (посмотреть правое поддерево)
+	// С€Р°Рі 3 <=> Рџ <=> РїСЂР°РІРѕРµ (РїРѕСЃРјРѕС‚СЂРµС‚СЊ РїСЂР°РІРѕРµ РїРѕРґРґРµСЂРµРІРѕ)
 	if (right != nullptr) {
 		next_id = right->findIdWithValue(value);
 		if (next_id != -1)
@@ -68,12 +68,12 @@ void BinaryTree::Node::addNode(int id, int value)
 
 void BinaryTree::Node::display(int level)
 {
-	// вывод узла, открывающаяся скобка
+	// РІС‹РІРѕРґ СѓР·Р»Р°, РѕС‚РєСЂС‹РІР°СЋС‰Р°СЏСЃСЏ СЃРєРѕР±РєР°
 	for (int i = 0; i < level; i++)
 		cout << '\t';
 	cout << "(id = " << id << ", value = " << value << endl;
 
-	// вывод правого поддерева
+	// РІС‹РІРѕРґ РїСЂР°РІРѕРіРѕ РїРѕРґРґРµСЂРµРІР°
 	if (right != nullptr)
 		right->display(level + 1);
 	else {
@@ -82,7 +82,7 @@ void BinaryTree::Node::display(int level)
 		cout << "(nullptr)" << endl;
 	}
 
-	// вывод левого поддерева
+	// РІС‹РІРѕРґ Р»РµРІРѕРіРѕ РїРѕРґРґРµСЂРµРІР°
 	if (left != nullptr)
 		left->display(level + 1);
 	else {
@@ -91,7 +91,7 @@ void BinaryTree::Node::display(int level)
 		cout << "(nullptr)" << endl;
 	}
 
-	// закрывающаяся скобка
+	// Р·Р°РєСЂС‹РІР°СЋС‰Р°СЏСЃСЏ СЃРєРѕР±РєР°
 	for (int i = 0; i < level; i++)
 		cout << '\t';
 	cout << ")" << endl;
