@@ -27,29 +27,19 @@ void BinaryTree::Node::addNode(int id, int value)
 // поиск идентификатора узла с заданными значением	
 	int BinaryTree::Node::findIdWithValue(int value)
 {
-	//шаг 1 <=> К <=> корень
+	//шаг 1 <=> К <=> проверяем корень
 	if (this->value == value)
 		return id;
 
-	//шаг 2 <=> Л <=> левое (посмотреть левое поддерево)
-	int next_id;
-	if (left != nullptr) {
-		next_id = left->findIdWithValue(value);
-		if (next_id != -1)
-			return next_id;
+	if (value>=this->value) {		
+		if (right==nullptr)
+			return id;
+		findIdWithValue(value);
 	}
 	else
-		next_id = -1;
-
-	// шаг 3 <=> П <=> правое (посмотреть правое поддерево)
-	if (right != nullptr) {
-		next_id = right->findIdWithValue(value);
-		if (next_id != -1)
-			return next_id;
-	}
-	else
-		next_id = -1;	
-	return next_id;
+		if (left == nullptr)
+			return id;
+	findIdWithValue(value);
 }
 
 	int BinaryTree::Node::findMin()
@@ -148,3 +138,4 @@ void BinaryTree::Node::display(int level)
 		else
 			root->display(0);
 	}
+

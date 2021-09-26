@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 #include <iostream>
 using namespace std;
 
@@ -16,9 +15,16 @@ private:
 	public:
 		Node(int id, int value, Node* left, Node* right);
 		Node(int id, int value) : Node(id, value, nullptr, nullptr) {}
+		~Node(){};
+
+		int getValue() { return value; }
+		Node* getLeft() { return left; }
+		Node* getRight() { return right; }
 
 		//добавление узла к дереву
 		void addNode(int id, int value);
+
+		//методы поиска
 		int findIdWithValue(int value);
 		int findMin();
 		int findMax();
@@ -33,6 +39,7 @@ private:
 
 public:
 	BinaryTree();
+	~BinaryTree() {};
 
 	//методы работы с деревом
 	void addNode(int value);

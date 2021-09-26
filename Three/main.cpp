@@ -6,14 +6,6 @@ using namespace std;
 
 #define delimiter    "\n=================================================================================\n"
 
-BinaryTree feelTree() {
-	BinaryTree tree;
-	int arr[]{ 14, 75, 29, 10, 62, 87, 76, 77, 88, 49 };
-	for (int i = 0; i < 10; i++)
-		tree.addNode(arr[i]);
-	return tree;
-}
-
 int fillArr(int n, int *arr)
 {
 	srand(time(0));
@@ -46,32 +38,28 @@ void showArr(int n, int* arr)
 	}
 }
 
+#define HOME_WORK
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
 
-	// 1. Дерево
-	// 2. Узел дерева 
-
-	BinaryTree tree = feelTree();
-	tree.display(); // дерево после заполнения
-	//cout << delimiter << endl;
-	cout << tree.findIdWithValue(62) << endl;
-	cout << "Минимальное  значение бинарного дерева: " << tree.findMin() << endl;
-	cout << "Максимальное значение бинарного дерева: " << tree.findMax() << endl;
+#ifdef HOME_WORK
+	BinaryTree tree;
 	cout << delimiter << endl;
-	const int n = 77;
-	int arr2[n]{};
-	fillArr(n, arr2);
-	showArr(n, arr2);
+	const int n = 3;//размер массива
+	int arr[n]{};
+	fillArr(n, arr);//функция заполнения массива уникальными (не повторяющимися) значениями
+	showArr(n, arr);//вывод массива на экран
 	cout << delimiter << endl;
-	tree.addArr(n, arr2);
+	tree.addArr(n, arr);
 	cout << endl;
 	tree.display(); // дерево после заполнения
 	cout << endl;
 	cout << delimiter << endl;
 	cout << "Минимальное  значение бинарного дерева: " << tree.findMin() << endl;
 	cout << "Максимальное значение бинарного дерева: " << tree.findMax() << endl;
+#endif // HOME_WORK
 
-	return 0;
 }
